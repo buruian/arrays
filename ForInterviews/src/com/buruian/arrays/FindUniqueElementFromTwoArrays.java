@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class FindUniqueElementFromTwoArrays {
 
-	public static void findElementTheWorstApproach(Integer[] array1, Integer[] array2) {
+	public static void findElementFirstApproach(Integer[] array1, Integer[] array2) {
 
 		ArrayList<Integer> unique = new ArrayList<>();
 		boolean dublicate;
@@ -31,7 +31,7 @@ public class FindUniqueElementFromTwoArrays {
 		System.out.println("First approach - searched element is : " +unique);
 	}
 
-	public static void findElementTheBetterApproach(Integer[] biggestArray, Integer[] secondArray) {
+	public static void findElementSecondApproach(Integer[] biggestArray, Integer[] secondArray) {
 
 		List<Integer> list = new ArrayList<Integer>(Arrays.asList(biggestArray));
 		HashSet<Integer> set = new HashSet<Integer>(list);
@@ -40,7 +40,7 @@ public class FindUniqueElementFromTwoArrays {
 
 	}
 
-	public static void findElementUsingMap(Integer[] biggestArray, Integer[] secondArray) {
+	public static void findElementThirdApproach(Integer[] biggestArray, Integer[] secondArray) {
 
 		System.out.println("Third approach - searched element is : " + (sumOfTheArray(biggestArray)-sumOfTheArray(secondArray)));
 
@@ -63,26 +63,26 @@ public class FindUniqueElementFromTwoArrays {
 		Integer[] array2 = { 8, 7, 9, 4, 1, 6, 3, 2 };
 
 		if (array1.length > array2.length) {
-			findElementTheBetterApproach(array1, array2);
+			findElementFirstApproach(array1, array2);
 		} else {
-			findElementTheBetterApproach(array2, array1);
+			findElementFirstApproach(array2, array1);
 		}
 
 		if (array1.length > array2.length) {
 
-			findElementTheWorstApproach(array1, array2);
+			findElementSecondApproach(array1, array2);
 		} else {
 
-			findElementTheWorstApproach(array2, array1);
+			findElementSecondApproach(array2, array1);
 		}
 
 		if (array1.length > array2.length) {
 
-			findElementUsingMap(array1, array2);
+			findElementFirstApproach(array1, array2);
 
 		} else {
 
-			findElementUsingMap(array2, array1);
+			findElementThirdApproach(array2, array1);
 
 		}
 
